@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Webcam</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            background-color: #000000;
+            color: #fff;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+    <script>
+        var url = "http://192.168.10.167:88/CGIProxy.fcgi";
+        var user = "root";
+        var pw = "root";
+        jQuery(document).ready(function() {
+            function command(settings) {
+                settings['usr'] = user;
+                settings['pwd'] = pw;
+                jQuery.getJSON(url + "?callback=?", settings).done(function(data) {
+                    console.log(jQuery.parseXML(data));
+                });
+            }
+
+            function moveTo(pos) {
+                command({
+                    cmd: 'ptzGotoPresetPoint',
+                    name: pos
+                });
+            }
+
+            function stopMov() {
+                setTimeout(function() {
+                    command({
+                        cmd: 'ptzStopRun'
+                    });
+                }, 1);
+            }
+
+            function qrefresh() {
+                refresh(); // do the actual refresh
+                // now schedule another refresh based on the value from our textfield.
+                setTimeout(function() {
+                    qrefresh();
+                }, jQuery('#refresh').val() * 1);
+            }
+            // start it going
+            setTimeout(function() {
+                qrefresh();
+            }, 5000);
+            // update the image based on a timestamp. 
+            function refresh() {
+                d = new Date();
+                jQuery("#image1").attr("src", url + "?cmd=snapPicture2&usr=" + user + "&pwd=" + pw + "&t=" + d.getTime());
+            }
+
+            jQuery('#front1').on('click', function() {
+                moveTo('Front1');
+            });
+            jQuery('#front2').on('click', function() {
+                moveTo('Front2');
+            });
+            jQuery('#front3').on('click', function() {
+                moveTo('Front3');
+            });
+            jQuery('#sunset').on('click', function() {
+                moveTo('Sunset');
+            });
+            jQuery('#sky').on('click', function() {
+                moveTo('Sky');
+            });
+            jQuery('#up').on('click', function() {
+                command({
+                    cmd: 'ptzMoveUp'
+                });
+                stopMov();
+            });
+            jQuery('#down').on('click', function() {
+                command({
+                    cmd: 'ptzMoveDown'
+                });
+                stopMov();
+            });
+            jQuery('#left').on('click', function() {
+                command({
+                    cmd: 'ptzMoveLeft'
+                });
+                stopMov();
+            });
+            jQuery('#right').on('click', function() {
+                command({
+                    cmd: 'ptzMoveRight'
+                });
+                stopMov();
+            });
+            jQuery('#refresh').on('click', function() {
+                refresh();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <img width="100%" src="" alt="" class="img-rounded" id="image1" />
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><button type="button" id="up" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-up"></span></button></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><button type="button" id="left" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-left"></span></button></td>
+                                <td>&nbsp;</td>
+                                <td><button type="button" id="right" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span></button></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td><button type="button" id="down" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-down"></span></button></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        Picture refreshes every <input type="text" style="width: 100px;" id="refresh" value="5" /> seconds.
+                        <br />
+                        <p>Positions</p>
+                        <div class="btn-group">
+                            <button type="button" id="front1" class="btn btn-default">Front 1</button>
+                            <button type="button" id="front2" class="btn btn-default">Front 2</button>
+                            <button type="button" id="front3" class="btn btn-default">Front 3</button>
+                            <button type="button" id="sky" class="btn btn-default">Sky</button>
+                            <button type="button" id="sunset" class="btn btn-default">Sunset</button>
+                        </div>
+                        <p><button type="button" id="refresh" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>Refresh</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="Description" CONTENT="Author: Vimal Niroshan Sengoden, Illustrator: Voice Driven Web Application, Category: Voice or Speech Recognition and Synthesis">
+    <title>Voice Assisted Web Application - Hello World</title>
+</head>
+
+<body>
+    <div id="voice">
+        <h3>Hello World</h3>
+        <br/> Say : <i>"Hello"</i> to hear back a response
+    </div>
+    <script type="text/javascript" src="includes/js/VoiceAssistant.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            voiceAssistant.configure({
+                listenContinuously: true,
+                requestHandlers: [
+                    new VoiceRequestHandler([
+                        "Hello",
+                        "Hey",
+                        "How are you"
+                    ], function () {
+                        voiceAssistant.say("Hello! Happy to hear from you! how are you?");
+                    })
+                ],
+                callBackAfterReady: function () {
+                    voiceAssistant.say("Hello! Welcome to Lynda's Voice Assistant !");
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" CONTENT="Author: Bang Doan, Illustrator: Voice Driven Web Application, Category: Voice or Speech Recognition and Synthesis">
+    <title>Voice Assistant Settings</title>
+    <link rel="stylesheet" href="includes/css/bootstrap.css">
+    <link rel="stylesheet" href="includes/css/bootstrap-theme.css">
+    <style type="text/css">
+        h1 {
+            margin: 30px 0;
+            padding: 0 200px 15px 0;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .bs-example {
+            margin: 75px 20px;
+        }
+    </style>
+    <script src="includes/js/jquery.js"></script>
+    <script src="includes/js/parameters.js"></script>
+    <script src="includes/js/responsivevoice.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/js/VoiceAssistant.js"></script>
+    <script type="text/javascript" src="includes/js/settings.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">
+                    <img alt="Brand" src="includes/images/brand.png">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About AI</a></li>
+                    <li><a href="#">Wiki</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">iOS</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Android</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Windows</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Enteprise</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./settings.html">Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Skill List<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Open Google</a></li>
+                            <li><a href="#">Google image [Something]</a></li>
+                            <li><a href="#">Google for [Something]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Open Youtube</a></li>
+                            <li><a href="#">Play song [Song Name]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Show movie [Movie Name]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">What is the time</a></li>
+                            <li><a href="#">What is the the weather in [Place]</a></li>
+                            <li><a href="#">What is the the weather on Tommorow</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Wikipedia [Something]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Sony [Tv Command]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Who is [Name]</a></li>
+                            <li><a href="#">Where is [Place]</a></li>
+                            <li><a href="#">What is [Thing]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Direction from [Place] to [Place]</a></li>
+                            <li><a href="#">Direction to [Place]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Show contact [Name]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Open Facebook profile</a></li>
+                            <li><a href="#">Open Facebook message</a></li>
+                            <li><a href="#">Open Facebook photo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="container1" class="container">
+        <div class="bs-example">
+            <form id="nameStart" class="form-horizontal">
+                <div id="nnDiv" class="form-group">
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control" id="nickName" placeholder="Nick Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-5 col-lg-4">
+                        <input id="name" type="button" class="btn btn-primary" value="Start">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="container2" class="container">
+        <div class="bs-example">
+            <ul class="nav nav-tabs">
+                <li class="active"><a id="home" data-toggle="tab" href="#homec">Home</a></li>
+                <li><a id="settings" data-toggle="tab" href="#settingsc">Voice Settings</a></li>
+                <li><a id="iotsettings" data-toggle="tab" href="#settingiot">IOT Config</a></li>
+                <li><a id="info" data-toggle="tab" href="#infoc">Information</a></li>
+                <li><a id="contact" data-toggle="tab" href="#contactc">Contact</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="homec" class="col-xs-offset-1 tab-pane fade in active">
+                    <h3>Fill In Your Details</h3>
+                    <form id="infoForm" class="form-horizontal">
+                        <div id="nameDiv" class="form-group">
+                            <label class="control-label col-xs-3" for="nameForm">Name:</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="nameForm" placeholder="Name">
+                            </div>
+                        </div>
+                        <div id="phDiv" class="form-group">
+                            <label class="control-label col-xs-3" for="phoneNumber">Phone Number:</label>
+                            <div class="col-xs-9">
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <div id="dobDiv" class="form-group">
+                            <label class="control-label col-xs-3">Date of Birth:</label>
+                            <div id="dtDiv" class="col-xs-3">
+                                <select id="date" class="form-control">
+                            <option>Date</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                            </div>
+                            <div class="col-xs-3">
+                                <select id="month" class="form-control">
+                            <option>Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                            </div>
+                            <div class="col-xs-3">
+                                <input id="year" type="year" class="form-control" placeholder="Year">
+                            </div>
+                        </div>
+                        <div id="aDiv" class="form-group">
+                            <label class="control-label col-xs-3" for="postalAddress">Address:</label>
+                            <div class="col-xs-6">
+                                <textarea rows="2" class="form-control" id="postalAddress" placeholder="Address Line"></textarea>
+                            </div>
+                            <div class="col-xs-3">
+                                <input id="unit" type="number" class="form-control" placeholder="Apt./Unit/Suite">
+                            </div>
+                        </div>
+                        <div id="cDiv" class="form-group">
+                            <label class="control-label col-xs-3" for="city">City:</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="city" placeholder="City">
+                            </div>
+                        </div>
+                        <div id="shDiv" class="form-group">
+                            <label class="control-label col-xs-3" for="state">State:</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="state" placeholder="State">
+                            </div>
+                        </div>
+                        <div id="zDiv" class="form-group">
+                            <label class="control-label col-xs-3" for="ZipCode">Zip Code:</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="zipCode" placeholder="Zip Code">
+                            </div>
+                        </div>
+                        <div id="gDiv" class="form-group">
+                            <label class="control-label col-xs-3">Gender:</label>
+                            <div class="col-xs-2">
+                                <label class="radio-inline">
+                            <input id="genderm" type="radio" name="genderRadios" value="male"> Male
+                        </label>
+                            </div>
+                            <div class="col-xs-2">
+                                <label class="radio-inline">
+                            <input id="genderf" type="radio" name="genderRadios" value="female"> Female
+                        </label>
+                            </div>
+                        </div>
+                        <div id="tDiv" class="form-group hidden">
+                            <div class="col-xs-offset-3 col-xs-9">
+                                <label class="checkbox-inline">
+                            <input id="tnc" type="checkbox" value="agree">  I agree to the <a id="tnclink" href="#" data-toggle="modal" data-target="#termsAndConditions">Terms and Conditions</a>.
+                        </label>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                    <!-- Modal -->
+                    <div id="termsAndConditions" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Terms &amp; Conditions</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        Copyright 2016 Vimal Niroshan Sengoden
+                                    </p>
+                                    <p>
+                                        Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+                                        You may obtain a copy of the License at
+                                    </p>
+                                    <p>
+                                        http://www.apache.org/licenses/LICENSE-2.0
+                                    </p>
+                                    <p>
+                                        Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS
+                                        IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+                                        See the License for the specific language governing permissions and limitations under
+                                        the License.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="tncClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+                <div id="settingsc" class="col-xs-offset-1 tab-pane fade">
+                    <h3>Settings</h3>
+                    <p>This is settings page to setup voice assistant</p>
+                    <div>
+                        <form id="voicesForm" class="form-horizontal">
+                            <div id="vDiv1" class="form-group">
+                                <label class="control-label col-xs-3" for="AIName">AI Name:</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="AIName" placeholder="AI Name">
+                                </div>
+                            </div>
+                            <div id="vDiv2" class="form-group">
+                                <label class="control-label col-xs-3" for="select_language">Input Speech Language: </label>
+                                <div class="col-xs-6">
+                                    <select id="select_language" class="form-control" onchange="updateCountry()">
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="vDiv3" class="form-group">
+                                <label class="control-label col-xs-3" for="select_dialect">Sub Accent: </label>
+                                <div class="col-xs-6">
+                                    <select id="select_dialect" class="form-control">
+                                </select>
+                                </div>
+                                <div class="col-xs-3">
+                                    <input id="testVoice" type="button" class="btn btn-default" value="Test Voice">
+                                </div>
+                            </div>
+                            <div id="vDiv4" class="form-group">
+                                <label class="control-label col-xs-3" for="languageout">Output Speech Language: </label>
+                                <div class="col-xs-6">
+                                    <select id="languageout" class="form-control">
+                                </select>
+                                </div>
+                            </div>
+                            <div id="vDiv5" class="form-group">
+                                <label class="control-label col-xs-3" for="languageoutspeed">Output Speech Speed: </label>
+                                <div class="col-xs-6">
+                                    <select id="languageoutspeed" class="form-control">
+                                        <option value="0.5">0.5</option>
+                                        <option value="1.0">1.0</option>
+                                        <option value="1.2">1.2</option>
+                                        <option value="1.5">1.5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="vDiv6" class="form-group">
+                                <label class="control-label col-xs-3" for="languageoutpitch">Output Speech Pitch: </label>
+                                <div class="col-xs-6">
+                                    <select id="languageoutpitch" class="form-control">
+                                        <option value="0.5">0.5</option>
+                                        <option value="1.0">1.0</option>
+                                        <option value="1.2">1.2</option>
+                                        <option value="1.5">1.5</option>
+                                        <option value="2.0">2.0</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="settingiot" class="col-xs-offset-1 tab-pane fade">
+                    <h3>IOT Configuration</h3>
+                    <p>This is settings page to setup IOT devices</p>
+                    <div>
+                        <form id="iotForm" class="form-horizontal">
+                            <div id="iotDiv1" class="form-group">
+                                <label class="control-label col-xs-3" for="sonyip">Sony Bravia IP:</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="sonyip" placeholder="Sony IP">
+                                </div>
+                            </div>
+                            <div id="iotDiv2" class="form-group">
+                                <label class="control-label col-xs-3" for="sonypre">Preshared Key:</label>
+                                <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="sonypre" placeholder="Sony Preshared Key" value="0000">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="infoc" class="col-xs-offset-1 tab-pane fade">
+                    <h3>Information</h3>
+                    <p>System Supported Information. View only.</p>
+                    <div>
+                        <form id="inForm" class="form-horizontal">
+                            <div id="iDiv1" class="form-group">
+
+                                <label class="control-label col-xs-3" for="languageoutbr">Speech Language Support: </label>
+                                <div class="col-xs-6">
+                                    <select id="languageoutbr" class="form-control">
+                                </select>
+                                </div>
+                            </div>
+                            <div id="iDiv2" class="form-group">
+
+                                <label class="control-label col-xs-3" for="google_translate_element">Page Direct Translate: </label>
+                                <div class="col-xs-6">
+                                    <div id="google_translate_element"></div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <script>
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement(
+                                { pageLanguage: 'en' },
+                                'google_translate_element'
+                            );
+
+                            /*
+                                To remove the "powered by google",
+                                uncomment one of the following code blocks.
+                                NB: This breaks Google's Attribution Requirements:
+                                https://developers.google.com/translate/v2/attribution#attribution-and-logos
+                            */
+
+                            //Native(but only works in browsers that support query selector)
+                            if (typeof (document.querySelector) == 'function') {
+                                document.querySelector('.goog-logo-link').setAttribute('style', 'display: none');
+                                document.querySelector('.goog-te-gadget').setAttribute('style', 'font-size: 0');
+                            }
+
+                            //If you have jQuery - works cross- browser - uncomment this
+                            //jQuery('.goog-logo-link').css('display', 'none');
+                            //jQuery('.goog-te-gadget').css('font-size', '0');
+                        }
+                    </script>
+                    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </div>
+                <div id="contactc" class="col-xs-offset-1 tab-pane fade">
+                    <div id="cDiv1" class="form-group">
+                        <h3>Contact</h3>
+                        <p>Email : bang.doan@sinoautoid.com.vn</p>
+                        <p>Phone : (+84)94-687-0302</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <input id="submit" type="submit" class="btn btn-primary" onclick="Submit()">
+                    <input id="reset" type="reset" class="btn btn-default hidden" value="Reset">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

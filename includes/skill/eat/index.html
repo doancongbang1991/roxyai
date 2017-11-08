@@ -1,0 +1,326 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>WHERE THE FUCK SHOULD I GO TO EAT?</title>
+    <meta name="description" content="FIND OUT WHERE TO GET SOME FUCKING FOOD">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Omakase" />
+    <meta name="keywords" content="map, guide, where, recommendations, eat, food, best restaurants, top restaurants, cafe" />
+
+    <!--TW-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wtf_sigte" />
+
+    <!--FB-->
+    <meta property="og:title" content="WHERE THE FUCK SHOULD I GO TO EAT?" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wtfsigte.com" />
+    <meta property="og:image" content="https://wtfsigte.com/img/eat/apple-touch-icon-precomposed.png" />
+    <meta property="og:site_name" content="WHERE THE FUCK SHOULD I GO TO EAT?" />
+    <meta property="og:description" content="FIND OUT WHERE TO GET SOME FUCKING FOOD" />
+    <!-- <meta name="apple-itunes-app" content=""/> -->
+
+    <meta name="apple-itunes-app" content="app-id=1194826573">
+
+    <link rel="apple-touch-icon" href="/img/eat/apple-touch-icon-precomposed.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+
+<body class="" id="eat" data-env="production">
+
+
+    <!-- LOCATOR-->
+    <div class="view is-active" id="location">
+        <div class="row">
+            <div class="col col--center">
+
+                <form class="locator form" action="#">
+                    <div class="message">
+                        <div class="message__icon"></div>
+                        <div class="message__text">
+                            &nbsp;
+                        </div>
+
+                    </div>
+                    <fieldset class="form__fieldset is-disabled">
+                        <input class="locator__search input" placeholder="Enter your fucking location" type="text" id="locationsearch" autocomplete="off">
+                        <input type="submit" class="locator__submit btn btn--large" value="find a place to fucking eat">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- RECOMMENDATION -->
+    <div id="recommendation" class="view">
+        <div class="map">
+            <div id="map"></div>
+        </div>
+        <!-- <div class="recommendation"> -->
+        <div class="recommendation__destination">
+
+
+
+            <p class="suggest highlight">
+                <span><span>Why don't you fucking go to </span></span>
+            </p>
+
+            <a href="" id="destination-link" class="recommendation__link highlight" target="_blank">
+                <span><span id="destination-link-text">
+                            
+                        </span></span>
+            </a>
+
+            <p class="highlight">
+                <span><span class="map__address">
+                            
+                        </span></span>
+            </p>
+        </div>
+
+        <div class="recommendation__actions">
+            <div class="row">
+                <div class="col col--right">
+                    <button title="FUCK YOU" class="actions__shit btn btn--large" href="#">No, That place looks like shit</button>
+                </div>
+            </div>
+
+
+        </div>
+        <nav class="nav">
+            <div class="nav__container row">
+                <a href="#share" class="icon content-toggle"></a>
+                <div class="col col--middle col--center nav__social" id="share">
+                    <div class="share-omakase ">
+                        <a href="http://omakase.studio" title="Omakase - A digital product studio" target="_blank"><span> served</span> <img src="./img/omakase.png" alt="Omakase"></a>
+                    </div>
+
+                    <div class="col app-link ">
+                        <a href="https://itunes.apple.com/app/https://itunes.apple.com/us/app/wtf-should-i-go-to-eat/id1194826573?ls=1&mt=8" title="Download on the App Store"><img src="./img/appstore.png" alt="Download on the App Store" class="badge"></a>
+
+                    </div>
+                    <div class="col app-link ">
+
+                        <a href="https://play.google.com/store/apps/details?id=studio.omakase.WTFSIGTE" title="Download on Google Play"><img src="./img/play.png" alt="Download on Google Play" class="badge"></a>
+                    </div>
+                </div>
+
+
+                <div class="col col--center col--bottom nav__app">
+                    <a href="#app" class="btn btn--beta content-toggle" id="app-btn">GET THE <br> APP</a>
+
+
+
+
+                </div>
+                <div class="col col--bottom">
+                    <a href="#donate" class="btn btn--beta content-toggle" id="donate-btn">Buy us <br> some food</a>
+                </div>
+
+
+
+                <div class="col col--bottom">
+                    <a href="http://wtfsigfd.com" class="actions__eat btn btn--beta" title="WHERE THE FUCK SHOULD I GO FOR DRINKS ?"> fucking <br>thirsty?</a>
+                </div>
+                <div class="col col--bottom">
+                    <a href="#location" class="actions__wrong btn btn--beta" title="BLAME YOUR FUCKING DEVICE">change <br> location</a>
+                </div>
+
+            </div>
+
+        </nav>
+        <!-- </div> -->
+    </div>
+    <div class="view view--modal" id="app">
+
+        <div class="view__content">
+
+            <div class="row">
+                <div class="col col--center copy aligned-c">
+                    <h3>GET THE FUCKING APP ON YOUR FUCKING PHONE</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col--center m--6-12">
+                    <a href="https://itunes.apple.com/app/https://itunes.apple.com/us/app/wtf-should-i-go-to-eat/id1194826573?ls=1&mt=8" title="Download on the App Store"><img src="./img/appstore.png" alt="Download on the App Store" class="badge"></a>
+                </div>
+
+
+                <div class="col col--center  m--6-12">
+                    <a href="https://play.google.com/store/apps/details?id=studio.omakase.WTFSIGTE" title="Download on Google Play"><img src="./img/play.png" alt="Download on Google Play" class="badge"></a>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- <div class="col col--center"> -->
+                <div class="col col--center">
+                    <a href="#" class="btn btn--small content-toggle" id="app-cancel">NO, fuck this and FUCK YOU</a>
+                    <!-- </div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="view view--modal" id="donate">
+
+        <div class="view__content">
+            <div class="loader">
+                <div class="message">
+                    <span class="message__icon"></span>
+                    <span class="message__text">WAIT THE FUCK UP</span>
+                </div>
+            </div>
+            <div class="donation-response">
+                <div class="row">
+                    <div class="col col--center">
+                        <div class="donation-response__message copy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+
+
+                    <div class="col col--center">
+                        <div class="fb-share-button" data-href="https://wtfsigte.com" data-layout="button_count" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwtfsigte.com%2F&amp;src=sdkpreparse">Share</a></div>
+
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://wtfsigte.com" data-via="wtf_sigte" data-dnt="true">Tweet</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <a href="#" id="hide-donation-response" class="btn">NO PROBLEM, MOTHERFUCKERS</a>
+                    </div>
+                </div>
+            </div>
+            <form action="charge.php" method="POST" id="payment-form" autocomplete="on" class="form">
+                <input type="hidden" name="site" value="eat">
+                <legend class="legend">
+
+                    Finding places for you motherfuckers is hungry work. If you feel fucking generous then why not buy us:
+                </legend>
+                <div class="row-group options">
+                    <div class="row">
+                        <div class="col">
+                            <input type="radio" name="type" class="input input--radio" value="option1" id="option1">
+                            <label for="option1" class="label payment-toggle btn">
+                                 <span class="desc">A shitty snack                                </span>
+                                ($<span class="value">2</span>)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="radio" name="type" class="input input--radio" value="option2" id="option2">
+                            <label for="option2" class="label payment-toggle btn">
+                               <span class="desc">Some fucking fast food shit                                </span>
+                                ($<span class="value">5</span>)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="radio" name="type" class="input input--radio" value="option3" id="option3">
+                            <label for="option3" class="label  payment-toggle btn">
+                              <span class="desc">A shitty meal somewhere                                </span>
+                                ($<span class="value">10</span>)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row-group toggle-content" id="stripe-form">
+
+                    <div id="apple-pay-form">
+                        <div class="row">
+                            <div class="col col--middle">
+                                <p>Pay with Apple Pay</p>
+                            </div>
+                            <div class="col col--right">
+                                <a href="#" id="apple-pay-button">ApplePay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col--middle">
+                            <p>pay by card</p>
+                        </div>
+                        <div class="col col--middle col--right">
+                            <img src="./img/powered_by_stripe@3x.png" alt="Powered by Stripe" class="stripe-logo">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col ">
+                            <label>
+                                <span>your fucking Card Number</span>  
+                                <input type="tel" data-stripe="number" class="cc-number input" placeholder="•••• •••• •••• ••••">
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col col--bottom">
+                            <label>
+                                <span>Expires</span>
+                                <input type="tel" data-stripe="exp" class="cc-exp input" placeholder="MM/YY">
+                            </label>
+                        </div>
+                        <div class="col col--bottom">
+                            <label>
+                                <span>CVC</span>
+                                <input type="tel" data-stripe="cvc" class="cc-cvc input" autocomplete="off" placeholder="•••">
+                            </label>
+                        </div>
+                        <div class="col col--bottom">
+                            <label>
+                                <span>Zip code</span>
+                                <input type="text" data-stripe="address_zip"  autocomplete="on" class="input">
+
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--center">
+                            <p class="form__errors"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--center">
+                            <input type="submit" class="submit btn" value="SHUT UP AND TAKE MY FUCKING MONEY" id="payment-confirm">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col--center">
+                        <a href="#" class="btn btn--small content-toggle" id="donate-cancel">NO, fuck this and FUCK YOU</a>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="scripts/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&key=AIzaSyCYhvsugzqZHnAy7aJ0qsS4ERPdZep_N8Q" type="text/javascript"></script>
+
+
+    <script type="text/javascript" src="scripts/vendor/jsstripev2.js"></script>
+    <script src="scripts/vendor/jquery.payment.min.js"></script>
+    <script src="scripts/eat.js"></script>
+</body>
+
+</html>

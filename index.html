@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" CONTENT="Author: Bang Doan, Illustrator: Voice Driven Web Application, Category: Voice or Speech Recognition and Synthesis">
+    <title>Voice Over Web Application</title>
+    <link rel="stylesheet" type="text/css" href="includes/css/voice.css" />
+    <script src="includes/js/jquery.js"></script>
+    <link rel="stylesheet" href="includes/css/bootstrap.css">
+    <link rel="stylesheet" href="includes/css/bootstrap-theme.css">
+    <script src="includes/js/bootstrap.js"></script>
+    <script src="https://apis.google.com/js/client.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">
+                    <img alt="Brand" src="includes/images/brand.png">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About AI</a></li>
+                    <li><a href="#">Wiki</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">iOS</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Android</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Windows</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Enteprise</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./settings.html">Settings</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Skill List<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Open Google</a></li>
+                            <li><a href="#">Google image [Something]</a></li>
+                            <li><a href="#">Google for [Something]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Open Youtube</a></li>
+                            <li><a href="#">Play song [Song Name]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Show movie [Movie Name]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">What is the time</a></li>
+                            <li><a href="#">What is the the weather in [Place]</a></li>
+                            <li><a href="#">What is the the weather on Tommorow</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Wikipedia [Something]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Sony [Tv Command]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Who is [Name]</a></li>
+                            <li><a href="#">Where is [Place]</a></li>
+                            <li><a href="#">What is [Thing]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Direction from [Place] to [Place]</a></li>
+                            <li><a href="#">Direction to [Place]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Show contact [Name]</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Open Facebook profile</a></li>
+                            <li><a href="#">Open Facebook message</a></li>
+                            <li><a href="#">Open Facebook photo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="top-bar">
+        <img id="mic" class="mic display" onclick="startListening();" src="includes/images/listen.png" />
+    </div>
+    <div id="fixed-top-bar">
+        <img id="mic" class="mic display" onclick="startListening();" src="includes/images/listen.png" />
+    </div>
+    <div class="conversation">
+        <div id="chat" class="chat">
+            <p id="interim" class="triangle-right right color-blue hide"></p>
+        </div>
+    </div>
+    <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper"><input class="message_input" placeholder="Type your message here..." /></div>
+        <div class="send_message">
+            <div class="icon"></div>
+            <div class="text">Send</div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalpopup" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe frameborder="0" id="modalframe"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="includes/js/parameters.js"></script>
+    <script type="text/javascript" src="includes/js/responsivevoice.js"></script>
+    <script type="text/javascript" src="includes/js/VoiceAssistant.js"></script>
+    <!--Load Lang-->
+    <script type="text/javascript" src="includes/lang/lang_en_US.js"></script>
+    <script type="text/javascript" src="includes/lang/lang_vi_VN.js"></script>
+    <script type="text/javascript" src="includes/lang/lang_cmn_Hans_CN.js"></script>
+    <script type="text/javascript" src="includes/lang/lang_es_ES.js"></script>
+    <script type="text/javascript" src="includes/lang/lang_ko_KR.js"></script>
+    <script type="text/javascript" src="includes/lang/lang_th_TH.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).on('scroll', function() {
+                var scrolltop = $(this).scrollTop();
+
+                if (scrolltop >= 50) {
+                    $('#fixed-top-bar').fadeIn(250);
+                } else if (scrolltop <= 50) {
+                    $('#fixed-top-bar').fadeOut(250);
+                }
+            });
+            $('.message_input').focus();
+        });
+
+        window.onload = function() {
+            voiceAssistant.configure({
+                requestHandlers: voiceRequestHandlers_en_US,
+                callBackAfterReady: function() {
+                    voiceAssistant.say("Hello!");
+                },
+                onListeningStarts: function() {
+                    console.log("Listening..");
+                    $(".mic").hide(1000);
+                },
+                onInterimResult: function(text) {
+                    console.log("Interim Speech:" + text);
+                    if (!$('#interim').is(':last-child')) {
+                        $("#interim").appendTo("#chat");
+                    }
+                    $("#interim").show();
+                    $("#interim").text(text);
+                },
+                onFinalResult: function(text) {
+                    console.log("Final Speech:" + text);
+                    $("#interim").hide();
+                    $("#chat").append($("<p class='triangle-right right color-blue'></p>").text(text));
+                },
+                onListeningStops: function() {
+                    console.log("Listening stopped.");
+                    $("#interim").hide();
+                    $("#interim").text("");
+                    $(".mic").show(1000);
+                },
+                onSpeechStart: function(text) {
+                    console.log("Going to speek:" + text);
+                    if (text != '')
+                        $("#chat").append($("<p class='triangle-right left color-orange'></p>").text(text));
+                    else
+                        $("#chat").append($("<p class='triangle-right left color-orange'></p>").text('Unknown request'));
+                    $("html, body").animate({
+                        scrollTop: $(document).height() + 50
+                    }, 1000);
+                }
+            });
+        };
+
+        function startListening() {
+            $("#chat").append($("<p class='triangle-right left color-orange'></p>").text("Start listening..."));
+            voiceAssistant.say("Start listening...");
+            voiceAssistant.listen();
+        }
+    </script>
+    <!--Load Skill-->
+    <script type="text/javascript" src="includes/skill/sonytv/skill.js"></script>
+    <script type="text/javascript" src="includes/skill/contact/contact.js"></script>
+    <script type="text/javascript" src="includes/skill/commons/commons.js"></script>
+    <script type="text/javascript" src="includes/skill/weather/weather.js"></script>
+</body>
+
+</html>
