@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="stylesheets/voice.css" rel="stylesheet" />
+    <script type='text/javascript' src='//code.jquery.com/jquery-2.1.4.min.js'></script>
+    <script src="js/responsivevoice.js"></script>
+    <script src="js/voice.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="message" class="message">Click "Talk" and begin speaking.</div>
+        <div class="todo"> <span id="final_span" class="final"></span>
+            <span id="interim_span" class="interim"></span>
+        </div>
+        <div class="controls">
+            <button id="talk_button" class="button" onclick="talkWithApp(event)">Talk</button>
+            <!--<select id="language" class="select">
+                <option value="vi-VN">Tiếng Việt</option>
+                <option value="en-GB">English</option>
+                <option value="it-IT">Italian</option>
+            </select>-->
+            <br>
+            <br>
+        </div>
+        <div class="controls">
+            <span>Input Speech Language: </span>
+            <br>
+            <select id="select_language" onchange="updateCountry()" class="select">
+            </select>
+            <select id="select_dialect" class="select">
+            </select>
+            <br>
+            <br>
+        </div>
+        <div class="controls">
+            <span>Output Speech Language: </span>
+            <br>
+            <select id="languageout" class="select">
+            </select>
+            <br>
+            <br>
+        </div>
+        <div class="controls">
+            <span>Output Speech Speed: </span>
+            <br>
+            <select id="languageoutspeed" class="select">
+                <option value="0.5">0.5</option>
+                <option value="1.0">1.0</option>
+                <option value="1.2">1.2</option>
+                <option value="1.5">1.5</option>
+            </select>
+        </div>
+        <div class="controls">
+            <span>Output Speech Pitch: </span>
+            <br>
+            <select id="languageoutpitch" class="select">
+                <option value="0.5">0.5</option>
+                <option value="1.0">1.0</option>
+                <option value="1.2">1.2</option>
+                <option value="1.5">1.5</option>
+                <option value="2.0">2.0</option>
+            </select>
+        </div>
+    </div>
+    </div>
+</body>
+
+
+</html>

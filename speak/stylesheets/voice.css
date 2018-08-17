@@ -1,0 +1,72 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f0f0f0;
+}
+.container {
+    width:98%;
+    margin:auto;
+    max-width:680px;
+}
+.message {
+    color:#999;
+    font-size:16px;
+    font-family:Verdana, Geneva, sans-serif;
+    padding: 1em 0;
+}
+.todo {
+    min-height:6em;
+    background-color: #ffc;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    color:#999;
+    font-size:2.5em;
+    font-family:Verdana, Geneva, sans-serif;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    border-bottom: 1px solid #bbb;
+    border-right: 1px solid #ccc;
+    border-left: 20px solid #ff6;
+    border-top: 1px solid #ddd;
+    -webkit-box-shadow: 0 0px 3px #BDBDBD;
+    box-shadow: 0 0px 3px #BDBDBD;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    transform: scale(1, 1);
+    transition: all 0.3s ease-in-out;
+}
+.controls {
+    text-align:center;
+}
+.button {
+    width: 200px;
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    padding: 10px 16px;
+    font-size: 18px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.button:hover {
+    background-color: #3276b1;
+    border-color: #285e8e;
+}
+.select {
+    background:#f0f0f0;
+    border: 1px solid #999;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 10px 16px;
+    font-size: 18px;
+}
+.final {
+    color: #999;
+}
+.interim {
+    color: #CCC;
+}

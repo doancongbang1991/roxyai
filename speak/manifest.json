@@ -1,0 +1,23 @@
+{
+    "name": "My TTS Engine",
+    "version": "1.0",
+    "permissions": ["ttsEngine", "tts"],
+    "tts_engine": {
+        "voices": [{
+                "voice_name": "Alice",
+                "lang": "en-US",
+                "gender": "female",
+                "event_types": ["start", "marker", "end"]
+            },
+            {
+                "voice_name": "Pat",
+                "lang": "en-US",
+                "event_types": ["end"]
+            }
+        ]
+    },
+    "background": {
+        "page": "background.html",
+        "persistent": false
+    }
+}
