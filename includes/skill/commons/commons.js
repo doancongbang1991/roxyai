@@ -40,7 +40,6 @@ function getMovie(searchTerm, infomess, sorrymess) {
         sort_by: 'peers',
     };
     url = movie_api_url;
-
     $.getJSON(url, params, function (data) {
         if (data.data.movie_count != "0") {
             voiceAssistant.say(infomess + data.data.movies[0].title_long);

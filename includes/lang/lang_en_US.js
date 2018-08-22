@@ -79,12 +79,14 @@ var voiceRequestHandlers_en_US = [
     new VoiceRequestHandler([
         "where to eat"
     ], function () {
-        openInNewTab(window.location.href + "/includes/skill/eat/", openintab, allowpopup);
+        let url = window.location.href.replace('?',"");
+        openInNewTab(url + "/includes/skill/eat/", openintab, allowpopup);
     }),
     new VoiceRequestHandler([
         "where to drink"
     ], function () {
-        openInNewTab(window.location.href + "/includes/skill/drink/", openintab, allowpopup);
+        let url = window.location.href.replace('?',"");
+        openInNewTab(url + "/includes/skill/drink/", openintab, allowpopup);
     }),
     new VoiceRequestHandler([
         "what is the date",
@@ -161,7 +163,7 @@ var voiceRequestHandlers_en_US = [
     new VoiceRequestHandler([
         /^(weather|what's weather|what's the weather|what is the weather) (in|on)( )?([- a-z0-9]+)$/gi
     ], function (matchGroups) {
-        weatherres = weatherResp(matchGroups[0]);
+        weatherres = weatherResp(matchGroups[0],'');
         voiceAssistant.say(weatherres);
     }),
     new VoiceRequestHandler([
@@ -255,6 +257,7 @@ var voiceRequestHandlers_en_US = [
 
 //Change language of AI
 function LoadLanguageRequestHandler(language) {
+    console.log(language);
     voiceAssistant.saywithlang("Language change to " + language, false, 'US English Female');
     switch (language) {
         case "english":
@@ -270,6 +273,18 @@ function LoadLanguageRequestHandler(language) {
             voiceAssistant.config.requestHandlers = voiceRequestHandlers_en_US;
             break;
         case "vietnamese":
+            LANG = "vi-VN";
+            voiceAssistant.speechRecognition.lang = "vi-VN";
+            responsive_voice_params = {
+                rate: 1,
+                pitch: 1,
+                volume: 1,
+                voice: 'Vietnamese Male'
+            };
+            requestHandlers = voiceRequestHandlers_vi_VN;
+            voiceAssistant.config.requestHandlers = voiceRequestHandlers_vi_VN;
+            break;
+        case "vietnam":
             LANG = "vi-VN";
             voiceAssistant.speechRecognition.lang = "vi-VN";
             responsive_voice_params = {

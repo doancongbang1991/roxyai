@@ -149,7 +149,7 @@ var voiceRequestHandlers_ko_KR = [
     new VoiceRequestHandler([
         /^(weather|what's weather|what's the weather|what is the weather) (in|on)( )?([- a-z0-9]+)$/gi
     ], function (matchGroups) {
-        weatherres = weatherResp(matchGroups[0]);
+        weatherres = weatherResp(matchGroups[0],'');
         voiceAssistant.say(weatherres);
     }),
     new VoiceRequestHandler([
@@ -237,6 +237,18 @@ function LoadLanguageRequestHandler(language) {
             };
             requestHandlers = voiceRequestHandlers_en_US;
             voiceAssistant.config.requestHandlers = voiceRequestHandlers_en_US;
+            break;
+        case "vietnam":
+            LANG = "vi-VN";
+            voiceAssistant.speechRecognition.lang = "vi-VN";
+            responsive_voice_params = {
+                rate: 1,
+                pitch: 1,
+                volume: 1,
+                voice: 'Vietnamese Male'
+            };
+            requestHandlers = voiceRequestHandlers_vi_VN;
+            voiceAssistant.config.requestHandlers = voiceRequestHandlers_vi_VN;
             break;
         case "vietnamese":
             LANG = "vi-VN";

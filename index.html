@@ -142,6 +142,8 @@
     <script type="text/javascript" src="includes/lang/lang_es_ES.js"></script>
     <script type="text/javascript" src="includes/lang/lang_ko_KR.js"></script>
     <script type="text/javascript" src="includes/lang/lang_th_TH.js"></script>
+    <script type="text/javascript" src="includes/lang/lang_vi_VN.js"></script>
+    
     <script type="text/javascript">
         $(document).ready(function() {
             $(window).on('scroll', function() {
@@ -190,7 +192,7 @@
                     if (text != '')
                         $("#chat").append($("<p class='triangle-right left color-orange'></p>").text(text));
                     else
-                        $("#chat").append($("<p class='triangle-right left color-orange'></p>").text('Unknown request'));
+                        //$("#chat").append($("<p class='triangle-right left color-orange'></p>").text('Unknown request'));
                     $("html, body").animate({
                         scrollTop: $(document).height() + 50
                     }, 1000);

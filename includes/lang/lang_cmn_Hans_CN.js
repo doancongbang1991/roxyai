@@ -149,7 +149,7 @@ var voiceRequestHandlers_cmn_Hans_CN = [
     new VoiceRequestHandler([
         /^(weather|what's weather|what's the weather|what is the weather) (in|on)( )?([- a-z0-9]+)$/gi
     ], function (matchGroups) {
-        weatherres = weatherResp(matchGroups[0]);
+        weatherres = weatherResp(matchGroups[0],'');
         voiceAssistant.say(weatherres);
     }),
     new VoiceRequestHandler([

@@ -54,7 +54,7 @@ function get_index_from_day() {
     return d.getDay()
 }
 
-function weatherResp(query) {
+function weatherResp(query,messageinput) {
     const api_opnw = 'http://api.openweathermap.org/data/2.5/weather'
     const api_opnw_in = 'http://api.openweathermap.org/data/2.5/weather'
     const api_opnw_on = 'http://api.openweathermap.org/data/2.5/forecast'
@@ -104,7 +104,7 @@ function weatherResp(query) {
     weather_cond = "";
     temp = "";
     condition = "";
-    message = "";
+    message = messageinput || 'It is currently <temp> and <condition>';
 
     if (forcast) {
         weather_cond = result.list[index];
@@ -116,11 +116,11 @@ function weatherResp(query) {
         condition = weather_cond.main;
     }
 
-    if (condition == 'Clear') {
-        message = 'It is currently <temp> and <condition>'
-    } else {
-        message = 'It is currently <temp> with <condition>'
-    }
+    // if (condition == 'Clear') {
+    //     message = 'It is currently <temp> and <condition>'
+    // } else {
+    //     message = 'It is currently <temp> with <condition>'
+    // }
 
     if (forcast) {
         message = message.replace('It is currently', 'It will be')
@@ -130,7 +130,7 @@ function weatherResp(query) {
     weather = weather.replace('<condition>', condition)
 
     if (country && country != '' && !forcast) {
-        weather = weather + ' in ' + country
+        weather = weather + ' ở ' + country
     } else if (country && country != '' && forcast) {
         if (country.trim() != 'tomorrow') {
             weather = weather + ' on ' + country

@@ -242,6 +242,7 @@ VoiceAssistant.prototype.say = function(text, dontListenAfterSpeechEnds) {
         //speechSynthesis.speak(this.fakeSpeechSynthesisUtterance(utterances[i]));
     }
     speechSynthesis.speak(this.fakeSpeechSynthesisUtterance(utterances[i]));
+    $('.message_input').val('');
 };
 
 VoiceAssistant.prototype.saywithlang = function(text, dontListenAfterSpeechEnds, langtospeak) {
@@ -276,6 +277,7 @@ VoiceAssistant.prototype.saywithlang = function(text, dontListenAfterSpeechEnds,
         //speechSynthesis.speak(this.fakeSpeechSynthesisUtterance(utterances[i]));
     }
     speechSynthesis.speak(this.fakeSpeechSynthesisUtterance(utterances[i]));
+    $('.message_input').val('');
 };
 
 VoiceAssistant.prototype.fakeSpeechSynthesisUtterance = function(text) {
@@ -335,7 +337,8 @@ VoiceAssistant.prototype.onResult = function(event) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 var transcript = event.results[i][0].transcript;
-                //console.log("Recognized:" + transcript);
+                console.log("Recognized:" + transcript);
+                $('.message_input').val(transcript);
                 if (this.config.onFinalResult) {
                     this.config.onFinalResult(transcript);
                 }

@@ -1,5 +1,6 @@
 //languague AI says
-var openintab = "Đã mở ở tab khác";
+//var openintab = "Đã mở ở tab khác";
+var openintab = '';
 var allowpopup = 'Vui lòng mở pop cho website';
 var unknownrequest = "";
 //handle request
@@ -102,6 +103,18 @@ var voiceRequestHandlers_vi_VN = [
         openInNewTab("https://www.google.com/search?q=" + matchGroups[4], openintab, allowpopup);
     }),
     new VoiceRequestHandler([
+        "tìm nhà hàng"
+    ], function () {
+        let url = window.location.href.replace('?',"");
+        openInNewTab(url + "/includes/skill/eat/", openintab, allowpopup);
+    }),
+    new VoiceRequestHandler([
+        "tìm quán cà phê"
+    ], function () {
+        let url = window.location.href.replace('?',"");
+        openInNewTab(url + "/includes/skill/drink/", openintab, allowpopup);
+    }),
+    new VoiceRequestHandler([
         /^((wiki)|(wikipedia)) ((for))( )?([- a-z0-9 \u0080-\u9fff]+)$/gi
     ], function (matchGroups) {
         openInNewTab("http://en.wikipedia.org/w/index.php?search=" + matchGroups[7], openintab, allowpopup);
@@ -145,7 +158,8 @@ var voiceRequestHandlers_vi_VN = [
     new VoiceRequestHandler([
         /^(weather|what's weather|what's the weather|thời tiết) (ở|vào)( )?([- a-z0-9 \u0080-\u9fff]+)$/gi
     ], function (matchGroups) {
-        weatherres = weatherResp(matchGroups[0]);
+        let query = matchGroups[0].replace('ở', 'in');
+        weatherres = weatherResp(query,'Thời tiết hiện tại <temp> và <condition>');
         voiceAssistant.say(weatherres);
     }),
     new VoiceRequestHandler([
@@ -199,6 +213,13 @@ var voiceRequestHandlers_vi_VN = [
         }
     }),
     new VoiceRequestHandler([
+        /^(cách nấu)( )?([- a-z0-9]+)$/gi
+    ], function (matchGroups) {
+        console.log(matchGroups);
+        cookrecipe(matchGroups[3], "Danh sách công thức nấu");
+        //voiceAssistant.say("Language change to" + matchGroups[3], true);
+    }),
+    new VoiceRequestHandler([
         /^(sony|Sony)( )?([- a-z0-9 \u0080-\u9fff]+)$/gi
     ], function (matchGroups) {
         console.log(matchGroups);
@@ -242,6 +263,18 @@ function LoadLanguageRequestHandler(language) {
             voiceAssistant.config.requestHandlers = voiceRequestHandlers_en_US;
             break;
         case "vietnamese":
+            LANG = "vi-VN";
+            voiceAssistant.speechRecognition.lang = "vi-VN";
+            responsive_voice_params = {
+                rate: 1,
+                pitch: 1,
+                volume: 1,
+                voice: 'Vietnamese Male'
+            };
+            requestHandlers = voiceRequestHandlers_vi_VN;
+            voiceAssistant.config.requestHandlers = voiceRequestHandlers_vi_VN;
+            break;
+        case "vietnam":
             LANG = "vi-VN";
             voiceAssistant.speechRecognition.lang = "vi-VN";
             responsive_voice_params = {

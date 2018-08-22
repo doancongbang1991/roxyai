@@ -69,7 +69,7 @@
 
             function l(e) {
                 b = 0,
-                    t("Finding places where you can fucking " + r + "...", "🔍"),
+                    t("Finding places where you can " + r + "...", "🔍"),
                     y = e,
                     console.log(type1),
                     homeMarker = new google.maps.Marker({
